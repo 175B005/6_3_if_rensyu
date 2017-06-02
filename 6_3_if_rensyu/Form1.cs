@@ -13,8 +13,8 @@ namespace _6_3_if_rensyu
     public partial class Form1 : Form
     {
         int vx = 10,vy = 10;
-       // int a = 0;
-       // int hoge = 1;
+        int a = 0;
+        int hoge = 1;
 
         public Form1()
         {
@@ -45,35 +45,42 @@ namespace _6_3_if_rensyu
         {
             if (button1.Left <=0){
                 vx = -vx;
+                a = 1;
             }//form参照Client.button1→ボタン参照,幅Width高さHeigth
             else if (button1.Left >= ClientSize.Width - 80)
             {
                 vx = -vx;
+                a = 1;
                 
             }
             if (button1.Top <= 0)
             {
                 vy = - vy;
+                a = 0;
             }
             else if (button1.Top >= ClientSize.Height - 60)
             {
                 vy = -vy;
+                a = 0;
             }
             button1.Left = button1.Left + vx;
             button1.Top = button1.Top + vy;
-            /*       if (vx > 0)
+              if(a == 1){
+              if (vx > 0)
                    {
                        hoge = 1;
                    }
                    else
                        hoge = 2;
-                   if (vy > 0)
-                   {
-                       hoge = 3;
-                   }
-                   else
-                   {
+             }else{
+                     if (vy > 0)
+                     {
                        hoge = 4;
+                     }
+                     else
+                     {
+                       hoge = 3;
+                     }
                    }
                    switch (hoge)
                    {
@@ -90,7 +97,7 @@ namespace _6_3_if_rensyu
                            button1.Text = ("下");
                            break;
                    }
-                   */
+                   
         }
     }
 }
